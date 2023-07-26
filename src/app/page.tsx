@@ -1,113 +1,125 @@
-import Image from 'next/image'
-
+import Image from "next/image";
+import React from "react";
+import image from "@/assets/image/png/cleaner.png";
+import { CButton } from "@/components/button";
+import { BsFillTelephoneFill, BsTelephoneFill } from "react-icons/bs";
+import { MdEmail } from "react-icons/md";
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">src/app/page.tsx</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+    <React.Fragment>
+      <div className="flex flex-col justify-between">
+        {/* section 1  */}
+        <div className="flex flex-col lg:flex-row px-5 sm:px-24">
+          <div className="lg:w-[50%] lg:h-[500px] flex flex-col order-2 lg:order-1 xl:order-1">
+            <h1 className="text-5xl font-medium my-10 sm:my-20">
+              Our Services
+            </h1>
+            <h5 className="text-lg w-auto sm:w-[400px]">
+              Are you ready to schedule your first cleaning? Or maybe you still
+              have some questions?
+            </h5>
+          </div>
+          <div className="sm:h-[500px] w-full lg:w-[50%] order-1 lg:order-2 xl:order-2">
+            <center>
+              <Image
+                alt="image"
+                src={image}
+                width={500}
+                height={500}
+                className="object-cover "
+              />
+            </center>
+          </div>
+        </div>
+        {/* section 2 */}
+        <div className="flex flex-col sm:flex-row px-5 sm:px-24 justify-between my-10 items-center sm:items-start">
+          <h5 className="text-gray-500 text-xs font-light sm:w-[50%] mb-5 sm:mb-0">
+            We have all the answers!
+          </h5>
+          <h5 className="text-gray-500 text-xs font-light sm:w-[50%]">
+            <div className="sm:w-[80%] leading-loose">
+              Our Support Team is here for you. Give us a call or shoot us an
+              email during business hours for immediate support. You can also
+              reach out to us after hours and we will get back to you as quickly
+              as possible.
+            </div>
+          </h5>
+        </div>
+        {/* section 3 */}
+        <div className="flex flex-col sm:flex-row px-5 sm:px-24 justify-between my-10">
+          <div className="flex flex-col items-center sm:items-start sm:w-[50%] mb-4 sm:mb-0">
+            <h1 className="mb-5">Contact us</h1>
+            <div>
+              <div className="flex flex-row items-center text-xs font-bold mb-2">
+                <span className="mr-2 rounded-full border-[1px] border-black p-1 ">
+                  <MdEmail fontSize={10} />
+                </span>
+                <h5>support@oboosho.com</h5>
+              </div>
+
+              <div className="flex flex-row items-center text-xs font-bold">
+                <span className="mr-2 rounded-full border-[1px] border-black p-1 ">
+                  <BsTelephoneFill fontSize={10} />
+                </span>
+                <h5>{`(917) 388-6727`}</h5>
+              </div>
+            </div>
+          </div>
+          <div className="flex flex-col items-center sm:items-start sm:w-[50%]">
+            <h1 className="mb-5">Business hours are in EST</h1>
+            <div className="flex flex-col  sm:w-[50%]">
+              <div className="flex flex-row justify-between mb-2.5 sm:mb-0">
+                <h5 className="text-xs font-bold mr-5">Monday - Friday</h5>
+                <h5 className="text-xs font-bold">
+                  8am <span>-</span> 9pm
+                </h5>
+              </div>
+              <div className="flex flex-row justify-between">
+                <h5 className="text-xs font-bold">
+                  Saturday <span>-</span> Sunday
+                </h5>
+                <h5 className="text-xs font-bold">
+                  9am <span>-</span> 6pm
+                </h5>
+              </div>
+            </div>
+          </div>
+        </div>
+        {/* section 4 */}
+        <div className="flex flex-col lg:flex-row justify-between mt-10">
+          <div className="lg:w-[50%] p-10 sm:p-20 bg-blue-800 flex flex-col items-center sm:items-start">
+            <h1 className="text-5xl text-white font-medium mb-10 text-center sm:text-start">
+              Still have a questions?
+            </h1>
+            <h5 className="text-gray-200 text-xs font-light leading-loose mb-32 xl:w-[550px]">
+              Can't find the answer you're looking for? Call us at (917)
+              388-6727 or email support@oboosho.com and we'll tell you oumelven!
+            </h5>
+            <div className="grid self-center">
+              <CButton
+                children="Write E-Mail"
+                className="py-4 px-7 rounded-md bg-white text-sm"
+              />
+            </div>
+          </div>
+          <div className="lg:w-[50%]  bg-gray-100 p-10 sm:p-20 flex flex-col items-center sm:items-start">
+            <h1 className="text-5xl text-black font-medium mb-10 text-center sm:text-start">
+              Book your cleaning
+            </h1>
+            <h5 className="text-gray-500 text-xs font-light leading-loose mb-32 w-auto xl:w-[550px]">
+              Leave for work in the morning (or take a spa day) we'll have your
+              place clean and looking great when you back. We won't even tell
+              anyone that we were there. that'll be between us.
+            </h5>
+            <div className="grid self-center">
+              <CButton
+                children="Book your cleaing services today!"
+                className="py-4 px-10 rounded-md bg-blue-800 text-sm text-white font-thin"
+              />
+            </div>
+          </div>
         </div>
       </div>
-
-      <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 before:lg:h-[360px] z-[-1]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className="mb-32 grid text-center lg:mb-0 lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Docs{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Learn{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Templates{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Explore the Next.js 13 playground.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Deploy{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
-  )
+    </React.Fragment>
+  );
 }
