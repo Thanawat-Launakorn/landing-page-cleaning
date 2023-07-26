@@ -4,7 +4,7 @@ import React from "react";
 import image from "@/assets/image/png/cleaner.png";
 import { CButton } from "@/components/button";
 import { BsTelephoneFill } from "react-icons/bs";
-import { motion } from "framer-motion";
+import { delay, motion } from "framer-motion";
 import { MdEmail } from "react-icons/md";
 export default function Home() {
   return (
@@ -30,6 +30,10 @@ export default function Home() {
               }}
               animate={{
                 opacity: 1,
+              }}
+              transition={{
+                duration: 0.3,
+                delay: 0.5,
               }}
             >
               <center>

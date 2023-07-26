@@ -18,7 +18,7 @@ export default function Layout({ children }: Props) {
         layout
         className="w-full"
         exit={{ opacity: 0 }}
-        initial={{ y: -1000, opacity: 0 }}
+        initial={{ y: -500, opacity: 0 }}
         whileInView={{ y: 0, opacity: 1 }}
         transition={{
           duration: 1,
