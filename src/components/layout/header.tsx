@@ -6,20 +6,20 @@ type Props = {};
 
 export default function AppHeader({}: Props) {
   return (
-    <div className="sticky top-0 w-full p-5 z-10 header">
+    <div className="sticky top-0 w-full p-5 z-20 header">
       <div className="flex flex-row justify-between items-center">
         <div className="flex flex-row items-center justify-between w-[300px]">
           <Link href={"/"}>
             <h1 className="text-2xl font-bold -mt-1">oboosho</h1>
           </Link>
           <div className="hidden sm:flex flex-row items-center justify-between text-sm font-light text-gray-500">
-            <Link href={"/home"}>
+            <Link href={"/"}>
               <h5>Home</h5>
             </Link>
-            <Link href={"/cleaning"}>
+            <Link href={"/"}>
               <h5 className="mx-2">Cleaning</h5>
             </Link>
-            <Link href={"/services"}>
+            <Link href={"/"}>
               <h5>Services</h5>
             </Link>
           </div>

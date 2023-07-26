@@ -4,12 +4,12 @@ type Props = {};
 
 export default function AppFooter({}: Props) {
   return (
-    <div className="bg-white p-20 shadow-xl border-[1px] w-full">
+    <div className="bg-white p-20 w-full">
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-5 items-start justify-items-stretch">
         <div className="flex flex-col items-center sm:items-start ">
           <h1 className="text-2xl font-bold -mt-1 mb-3">oboosho</h1>
           <p className="w-[200px] text-xs text-gray-500 font-light leading-relaxed">
-            Copyright &copy 2023 Oboosho all right reserved
+            Copyright &copy; 2023 Oboosho all right reserved
           </p>
         </div>
         <div className="flex flex-col items-center sm:items-start ">

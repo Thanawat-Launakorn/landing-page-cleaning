@@ -1,8 +1,10 @@
+"use client";
 import Image from "next/image";
 import React from "react";
 import image from "@/assets/image/png/cleaner.png";
 import { CButton } from "@/components/button";
-import { BsFillTelephoneFill, BsTelephoneFill } from "react-icons/bs";
+import { BsTelephoneFill } from "react-icons/bs";
+import { motion } from "framer-motion";
 import { MdEmail } from "react-icons/md";
 export default function Home() {
   return (
@@ -19,16 +21,27 @@ export default function Home() {
               have some questions?
             </h5>
           </div>
+
           <div className="sm:h-[500px] w-full lg:w-[50%] order-1 lg:order-2 xl:order-2">
-            <center>
-              <Image
-                alt="image"
-                src={image}
-                width={500}
-                height={500}
-                className="object-cover "
-              />
-            </center>
+            <motion.div
+              whileHover={{ scale: 1.2 }}
+              initial={{
+                opacity: 0,
+              }}
+              animate={{
+                opacity: 1,
+              }}
+            >
+              <center>
+                <Image
+                  alt="image"
+                  src={image}
+                  width={500}
+                  height={500}
+                  className="object-cover "
+                />
+              </center>
+            </motion.div>
           </div>
         </div>
         {/* section 2 */}
@@ -88,13 +101,24 @@ export default function Home() {
         {/* section 4 */}
         <div className="flex flex-col lg:flex-row justify-between mt-10">
           <div className="lg:w-[50%] p-10 sm:p-20 bg-blue-800 flex flex-col items-center sm:items-start">
-            <h1 className="text-5xl text-white font-medium mb-10 text-center sm:text-start">
-              Still have a questions?
-            </h1>
-            <h5 className="text-gray-200 text-xs font-light leading-loose mb-32 xl:w-[550px]">
-              Can't find the answer you're looking for? Call us at (917)
-              388-6727 or email support@oboosho.com and we'll tell you oumelven!
-            </h5>
+            <motion.div
+              initial={{ opacity: 0 }}
+              exit={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              transition={{
+                duration: 0.5,
+                delay: 0.1,
+              }}
+            >
+              <h1 className="text-5xl text-white font-medium mb-10 text-center sm:text-start">
+                Still have a questions?
+              </h1>
+              <h5 className="text-gray-200 text-xs font-light leading-loose mb-32 xl:w-[550px]">
+                Can't find the answer you're looking for? Call us at (917)
+                388-6727 or email support@oboosho.com and we'll tell you
+                oumelven!
+              </h5>
+            </motion.div>
             <div className="grid self-center">
               <CButton
                 children="Write E-Mail"
@@ -103,14 +127,25 @@ export default function Home() {
             </div>
           </div>
           <div className="lg:w-[50%]  bg-gray-100 p-10 sm:p-20 flex flex-col items-center sm:items-start">
-            <h1 className="text-5xl text-black font-medium mb-10 text-center sm:text-start">
-              Book your cleaning
-            </h1>
-            <h5 className="text-gray-500 text-xs font-light leading-loose mb-32 w-auto xl:w-[550px]">
-              Leave for work in the morning (or take a spa day) we'll have your
-              place clean and looking great when you back. We won't even tell
-              anyone that we were there. that'll be between us.
-            </h5>
+            <motion.div
+              initial={{ opacity: 0 }}
+              exit={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              transition={{
+                duration: 2,
+                delay: 0.5,
+              }}
+            >
+              <h1 className="text-5xl text-black font-medium mb-10 text-center sm:text-start">
+                Book your cleaning
+              </h1>
+              <h5 className="text-gray-500 text-xs font-light leading-loose mb-32 w-auto xl:w-[550px]">
+                Leave for work in the morning (or take a spa day) we'll have
+                your place clean and looking great when you back. We won't even
+                tell anyone that we were there. that'll be between us.
+              </h5>
+            </motion.div>
+
             <div className="grid self-center">
               <CButton
                 children="Book your cleaing services today!"
